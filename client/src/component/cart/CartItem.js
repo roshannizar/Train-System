@@ -21,13 +21,15 @@ class CartItem extends Component {
                     <form>
                         <div className="train-detail-slot">
                             <div className="main-badge">
-                                <label className="badge left-badge green card-label">{cart.bookingid}</label>
                                 <label className="badge dark-green right card-label-right">{cart.quantity}</label>
                             </div>
                             <label className="card-label">Train No:</label>
                             <label className="card-label">{cart.trainid}</label><br /><br />
                             <label className="card-label">Price:</label>
                             <label className="badge card-label lawrencium">{cart.price}</label>
+                        </div>
+                        <div className="controls">
+                            <input type="submit" className="btn" value="Remove" />
                         </div>
                     </form>
                 </div>

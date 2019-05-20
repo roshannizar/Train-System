@@ -19,23 +19,14 @@ router.post('/reserve', (req, res) => {
         return res.status(400).json(errors);
     }
 
-    Booking.findOne({ bookingid: req.body.bookingid }).then(booking => {
 
-        if (booking) {
-            errors.bookingid = 'Booking already made';
-            return res.status(400).json(errors);
-        }
-        else {
-            const newBooking = new Booking({
-                trainid: req.body.trainid,
-                bookingid: req.body.bookingid,
-                price: req.body.price,
-                quantity: req.body.quantity
-            });0
+    const newBooking = new Booking({
+        trainid: req.body.trainid,
+        price: req.body.price,
+        quantity: req.body.quantity
+    });
 
-            newBooking.save().then(booking => res.json(booking)).catch(err => console.log(err));
-        }
-    })
+    newBooking.save().then(booking => res.json(booking)).catch(err => console.log(err));
 })
 
 module.exports = router;

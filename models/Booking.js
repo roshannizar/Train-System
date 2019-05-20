@@ -7,10 +7,6 @@ const BookingSchema = new Schema({
         type: String,
         required: true
     },
-    bookingid: {
-        type: String,
-        required: true
-    },
     price: {
         type: Number,
         required: true

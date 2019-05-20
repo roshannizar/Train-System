@@ -13,7 +13,6 @@ class TrainItem extends Component {
         super(props);
         this.state = {
             trainid: '',
-            bookingid: '',
             price: '',
             quantity: '',
             errors: {}
@@ -38,7 +37,6 @@ class TrainItem extends Component {
 
         const newBooking = {
             trainid: this.state.trainid,
-            bookingid: this.state.bookingid,
             price: this.state.price,
             quantity: this.state.quantity
         };
@@ -71,7 +69,6 @@ class TrainItem extends Component {
                         <div className="controls">
                             <label className="card-label">No of ticket: </label>
                             <input type="number" className="ticket-box" name="quantity" value={this.state.quantity} onChange={this.onChange}/><br /><br />
-                            <input type="text" name="bookingid" value={this.state.bookingid} onChange={this.onChange}/><br/>
                             <input type="text" hidden name="trainid" value={this.state.trainid=train.trainid} onChange={this.onChange}/><br/>
                             <input type="text" hidden name="price" value={this.state.price = train.price} onChange={this.onChange}/>
                             <input type="submit" className="btn" value="Reserve" />

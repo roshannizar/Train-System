@@ -6,7 +6,6 @@ module.exports = function validateBookingInput(data) {
     let errors = {};
 
     data.trainid = !isEmpty(data.trainid) ? data.trainid : '';
-    data.bookingid = !isEmpty(data.bookingid) ? data.bookingid : '';
     data.price = !isEmpty(data.price) ? data.price : '';
     data.quantity = !isEmpty(data.quantity) ? data.quantity : '';
 
@@ -16,14 +15,6 @@ module.exports = function validateBookingInput(data) {
 
     if (Validator.isEmpty(data.trainid)) {
         errors.trainid = 'Train id is required';
-    }
-
-    if (!Validator.isAlphanumeric(data.bookingid)) {
-        errors.bookingid = 'Booking id is invalid';
-    }
-
-    if (Validator.isEmpty(data.bookingid)) {
-        errors.bookingid = 'Booking id is required';
     }
 
     if (!Validator.isNumeric(data.price)) {
