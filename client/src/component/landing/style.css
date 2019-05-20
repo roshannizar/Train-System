@@ -1,0 +1,187 @@
+.nav-bar {
+    position: fixed;
+    left:0;
+    top:0;
+    right:0;
+    width:100%;
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color: #1F1C2C;
+}
+.link-style {
+    font-size:18px;
+    font-family: 'Calibri';
+    text-align:center;
+    margin:10px;
+    color:whitesmoke;
+    text-decoration: none;
+    border-radius: 5px;
+    padding:2.5px 10px 2.5px 10px;
+}
+.link-style:hover {
+    color: #1F1C2C;
+    background-color: whitesmoke;
+}
+.right {
+    text-align: right;
+}
+.title-div {
+    position: absolute;
+    left:0;
+    top:8.6%;
+    right:0;
+    background-color: whitesmoke;
+    width:100%;
+    padding-bottom:20px;
+}
+.title {
+    font-size:18px;
+    font-family:'Calibri';
+    font-weight:bold;
+}
+.title-box {
+    padding:20px;
+}
+.left {
+    float:left;
+    font-family: 'Calibri';
+    color:whitesmoke;
+    margin-left:20px;
+    font-weight:bold;
+}
+.card {
+    padding:10px;
+    background-color:silver;
+    margin:5px 10px 10px 20px;
+    width:16%;
+    float:left;
+}
+.card-title {
+    font-size:16px;
+    font-family: 'Calibri';
+}
+.image-slot {
+    width:100%;
+}
+.image-slot img {
+    width:100%;
+}
+.train-detail-slot {
+    width:100%;
+    padding-top:20px;
+}
+.card-label {
+    font-family: 'Calibri';
+    margin-left:30px;
+}
+.badge {
+    padding: 2.5px 10px 2.5px 10px;
+    color:whitesmoke;
+    border-radius:5px;
+}
+.btn {
+    background-color:transparent;
+    border:1px solid whitesmoke;
+    outline:none;
+    font-size:18px;
+    font-family: 'Calibri';
+    color:whitesmoke;
+    padding:2.5px 10px 2.5px 10px;
+    margin-left:30px;
+    border-radius: 5px;
+    width:75%;
+    cursor: pointer;
+}
+.btn:hover {
+    color:#1F1C2C;
+    background: whitesmoke;
+}
+.dark-green {
+    background-color:#061700;
+}
+.right {
+    float:right;
+}
+.main-badge {
+    width:100%;
+    float:right;
+    margin-bottom:20px;
+}
+.left-badge {
+    float:left;
+}
+.green {
+    background-color: seagreen;
+}
+.card-label-right {
+    margin-right:30px;
+}
+.lawrencium {
+    background-color: #302b63;
+}
+.controls {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.ticket-box {
+    border:1px solid whitesmoke;
+    outline: none;
+    font-size:14px;
+    font-family: 'Calibri';
+    width:20%;
+    color: black;
+    margin-left:20px;
+    background-color: transparent;
+    transition-duration: 0.5s;
+    padding:5px;
+}
+.ticket-box:focus {
+    padding-left:10px;
+}
+.payment {
+    float:right;
+    width:20%;
+    background-color:white;
+    margin-right:20px;
+    padding-bottom:20px;
+}
+.heading {
+    font-size:20px;
+    font-family: 'Calibri';
+}
+.heading-box {
+    margin-top:20px;
+    text-align:center;
+    margin-bottom:20px;
+}
+.payment-left {
+    float:left;
+    font-weight: bold;
+    font-size:20px;
+}
+.payment-right {
+    float:right;
+    font-weight: bold;
+    font-size:20px;
+}
+.primary {
+    margin-top:20px;
+    background-color:#1F1C2C;
+    width:80%;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.link-style-two {
+    text-decoration: none;
+}
+.center {
+    text-align:center;
+}
+.card-spinner {
+    width:100%;
+    text-align: center;
+    height:auto;
+}
+.card-spinner img {
+    width:49.5%;
+}
