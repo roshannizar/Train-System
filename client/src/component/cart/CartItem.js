@@ -22,7 +22,7 @@ class CartItem extends Component {
                         <div className="train-detail-slot">
                             <div className="main-badge">
                                 <label className="badge left-badge green card-label">{cart.bookingid}</label>
-                                 <label className="badge dark-green right card-label-right">{cart.quantity}</label>
+                                <label className="badge dark-green right card-label-right">{cart.quantity}</label>
                             </div>
                             <label className="card-label">Train No:</label>
                             <label className="card-label">{cart.trainid}</label><br /><br />

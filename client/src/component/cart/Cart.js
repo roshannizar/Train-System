@@ -23,7 +23,7 @@ class Cart extends Component {
         } else {
             if (carts.length > 0) {
                 cartItems = carts.map(cart => (
-                    <CartItem key={cart._id} train={cart} />
+                    <CartItem key={cart._id} cart={cart} />
                 ));
             } else {
                 cartItems = <h4 className="center">Cart is empty .....</h4>;

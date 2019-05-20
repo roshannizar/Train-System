@@ -1,20 +1,26 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { reserve } from '../../action/reserveAuth';
+import { connect } from 'react-redux';
 
 import Pic from '../../images/train.png';
 import '../landing/style.css';
 
 class TrainItem extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             trainid: '',
+            bookingid: '',
             price: '',
             quantity: '',
             errors: {}
         };
+
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -34,12 +40,15 @@ class TrainItem extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        const newBooking = {
-            trainid: this.state.name,
-            price: this.state.price,
-            quantity: this.state.quantity
+        const { train } = this.props;
 
-        }
+        const newBooking = {
+            trainid: train.trainid,
+            price: train.price,
+            quantity: this.state.quantity
+        };
+
+        this.props.reserve(newBooking);
     }
 
     render() {
@@ -80,4 +89,9 @@ TrainItem.propType = {
     train: PropTypes.object.isRequired
 };
 
-export default TrainItem;
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors
+});
+
+export default connect(mapStateToProps, {reserve})(TrainItem);
