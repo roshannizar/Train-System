@@ -1,9 +1,9 @@
+/* eslint-disable react/no-direct-mutation-state */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { reserve } from '../../action/reserveAuth';
 import { connect } from 'react-redux';
-
 import Pic from '../../images/train.png';
 import '../landing/style.css';
 
@@ -23,10 +23,6 @@ class TrainItem extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    componentDidMount() {
-
-    }
-
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
             this.setState({ errors: nextProps.errors });
@@ -40,11 +36,10 @@ class TrainItem extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        const { train } = this.props;
-
         const newBooking = {
-            trainid: train.trainid,
-            price: train.price,
+            trainid: this.state.trainid,
+            bookingid: this.state.bookingid,
+            price: this.state.price,
             quantity: this.state.quantity
         };
 
@@ -62,7 +57,7 @@ class TrainItem extends Component {
                         <img src={Pic} alt="Train Image" />
                     </div>
                     <hr />
-                    <form>
+                    <form onSubmit={this.onSubmit}>
                         <div className="train-detail-slot">
                             <div className="main-badge">
                                 <label className="badge left-badge green card-label">{train.status}</label>
@@ -75,7 +70,10 @@ class TrainItem extends Component {
                         </div>
                         <div className="controls">
                             <label className="card-label">No of ticket: </label>
-                            <input type="number" className="ticket-box" /><br /><br />
+                            <input type="number" className="ticket-box" name="quantity" value={this.state.quantity} onChange={this.onChange}/><br /><br />
+                            <input type="text" name="bookingid" value={this.state.bookingid} onChange={this.onChange}/><br/>
+                            <input type="text" hidden name="trainid" value={this.state.trainid=train.trainid} onChange={this.onChange}/><br/>
+                            <input type="text" hidden name="price" value={this.state.price = train.price} onChange={this.onChange}/>
                             <input type="submit" className="btn" value="Reserve" />
                         </div>
                     </form>
@@ -86,12 +84,12 @@ class TrainItem extends Component {
 }
 
 TrainItem.propType = {
+    reserve: PropTypes.func.isRequired,
     train: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-    auth: state.auth,
     errors: state.errors
 });
 
-export default connect(mapStateToProps, {reserve})(TrainItem);
+export default connect(mapStateToProps, { reserve })(TrainItem);
