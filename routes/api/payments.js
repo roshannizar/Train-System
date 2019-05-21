@@ -30,4 +30,15 @@ router.post('/addpayment', (req, res) => {
 
 });
 
+router.post('/mobile', (req, res)=> {
+
+    const newDialogMobile = new DialogMobile({
+        name: req.body.name,
+        phoneno: req.body.phoneno,
+        pin: req.body.pin
+    });
+
+    newDialogMobile.save().then(mobile => res.json(mobile)).catch(err => console.log(err));
+});
+
 module.exports = router;
