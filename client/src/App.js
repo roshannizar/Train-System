@@ -14,8 +14,10 @@ function App() {
       <Provider store={store}>
         <Router>
           <NavBar />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/cart" component={Cart}/>
+          <div id="apptwo">
+            <Route exact path="/" component={Home} />
+            <Route exact path="/cart" component={Cart} />
+          </div>
         </Router>
       </Provider>
     </div>
