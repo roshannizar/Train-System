@@ -195,3 +195,11 @@
     padding-bottom:30px;
     width:40%;
 }
+.card-large {
+    padding:10px;
+    background-color:silver;
+    margin:5px 10px 10px 20px;
+    width:97%;
+    height:100px;
+    float:left;
+}
