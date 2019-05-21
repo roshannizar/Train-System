@@ -15,7 +15,7 @@ class NavBar extends Component {
                     <div className="right">
                         <Link to="/" className="link-style-two"><a href="/" className="link-style">HOME</a></Link>
                         <a href="" className="link-style">TICKET</a>
-                        <a href="" className="link-style">PAYMENT</a>
+                        <Link to="/payment" className="link-style-two"><a href="" className="link-style">PAYMENT</a></Link>
                         <Link to="/cart" className="link-style-two"><a href="" className="link-style">CART</a></Link>
                     </div>
                 </div>
