@@ -185,3 +185,13 @@
 .card-spinner img {
     width:49.5%;
 }
+.selector {
+    text-align:center;
+    font-family: 'Calibri';
+    font-size:30px;
+}
+.selector-btn {
+    padding-top:30px;
+    padding-bottom:30px;
+    width:40%;
+}
