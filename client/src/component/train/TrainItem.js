@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { reserve } from '../../action/reserveAuth';
+import { reserve } from '../../action/reserveAction';
 import { connect } from 'react-redux';
 import Pic from '../../images/train.png';
 import '../landing/style.css';
