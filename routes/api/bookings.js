@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 
 const validateBookingInput = require('../../validation/reserve');
 const Booking = require('../../models/Booking');
@@ -27,6 +28,10 @@ router.post('/reserve', (req, res) => {
     });
 
     newBooking.save().then(booking => res.json(booking)).catch(err => console.log(err));
-})
+});
+
+router.delete('/remove', (req, res) => {
+    Booking.findByIdAndDelete({ _id: mongoose.Types.ObjectId(req.body.id) }).then(() => res.json({ success: true})).catch(err => console.log(err));
+});
 
 module.exports = router;
