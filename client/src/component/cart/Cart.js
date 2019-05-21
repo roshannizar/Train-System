@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import CartItem from './CartItem';
+import ReactDOM from 'react-dom';
 import { getBookings } from '../../action/CartActions';
 import Spinner from '../spinner/Spinner';
+import PaymentSelection from '../payment/PaymentSelection';
 
 import '../landing/style.css';
 
@@ -11,6 +13,10 @@ class Cart extends Component {
 
     componentDidMount() {
         this.props.getBookings();
+    }
+
+    redirectToPaymentSelection() {
+        ReactDOM.render(<PaymentSelection/>, document.getElementById('apptwo'));
     }
 
     render() {
@@ -55,7 +61,7 @@ class Cart extends Component {
                                 <label className="card-label-right">40/=</label>
                             </div>
                             <div>
-                                <button className="btn primary">Pay Now</button>
+                                <button className="btn primary" onClick={()=> this.redirectToPaymentSelection()}>Pay Now</button>
                             </div>
                         </div>
                     </div>
