@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import SampathBank from '../payment/SampathPayment';
-import DialogMobile from '../payment/DialogMobile';
+import { Link } from 'react-router-dom';
 
 import '../landing/style.css';
 
 class PaymentSelection extends Component {
 
-    redirectToCard() {
-        ReactDOM.render(<SampathBank />, document.getElementById('apptwo'));
-    }
-
-    redirectToDialog() {
-        ReactDOM.render(<DialogMobile />, document.getElementById('apptwo'));
-    }
 
     render() {
         return (
@@ -22,8 +13,8 @@ class PaymentSelection extends Component {
                     <label className="title">Select your payment type</label>
                 </div>
                 <div className="selector">
-                    <button className="btn primary selector-btn" onClick={() => this.redirectToCard()}>Sampath Bank Card</button>
-                    <button className="btn primary selector-btn" onClick={() => this.redirectToDialog()}>Dialog Mobile</button>
+                    <Link to="/card"><button className="btn primary selector-btn">Sampath Bank Card</button></Link>
+                    <Link to="/mobile"><button className="btn primary selector-btn">Dialog Mobile</button></Link>
                 </div>
             </div>
         );

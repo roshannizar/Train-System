@@ -9,6 +9,7 @@ module.exports = function validatePaymentInput(data) {
     data.cardno = !isEmpty(data.cardno) ? data.cardno : '';
     data.cvcno = !isEmpty(data.cvcno) ? data.cvcno : '';
     data.amount = !isEmpty(data.amount) ? data.amount : '';
+    data.email = !isEmpty(data.email) ? data.email:'';
 
     if (!Validator.isAlphanumeric(data.cardname)) {
         errors.cardname = 'Card Name is invalid';
@@ -40,6 +41,14 @@ module.exports = function validatePaymentInput(data) {
 
     if (Validator.isEmpty(data.amount)) {
         errors.amount = 'Amount is required';
+    }
+
+    if(!Validator.isEmail(data.email)) {
+        errors.email = "E-Mail is invalid";
+    }
+
+    if(Validator.isEmpty(data.email)) {
+        errors.email="E-Mail is required";
     }
 
     return {

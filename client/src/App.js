@@ -4,8 +4,10 @@ import Home from './component/landing/Home';
 import NavBar from './component/navigation/NavBar';
 import Cart from './component/cart/Cart';
 import { Provider } from 'react-redux';
-import PaymentSelection from './component/payment/PaymentSelection';
 import store from './store';
+import DialogMobile from './component/payment/DialogMobile';
+import PaymentSelection from './component/payment/PaymentSelection';
+import SampathPayment from './component/payment/SampathPayment';
 
 import './App.css';
 
@@ -17,8 +19,10 @@ function App() {
           <NavBar />
           <div id="apptwo">
             <Route exact path="/" component={Home} />
-            <Route exact path="/payment" component={PaymentSelection}/>
             <Route exact path="/cart" component={Cart} />
+            <Route exact path="/payment" component={PaymentSelection}/>
+            <Route exact path="/card" component={SampathPayment}/>
+            <Route exact path="/mobile" component={DialogMobile}/>
           </div>
         </Router>
       </Provider>

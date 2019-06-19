@@ -203,3 +203,8 @@
     float:left;
     padding-bottom:20px;
 }
+.small {
+    width:7%;
+    margin-right:20px;
+    margin-left:-1px;
+}

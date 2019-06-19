@@ -10,6 +10,14 @@ export const addPayment = (paymentData) => dispatch => {
     }));
 };
 
+export const addMobile = (mobileData) => dispatch => {
+    dispatch(setTrainLoading());
+    axios.post('/api/payments/mobile', mobileData).then(res => console.log('Payment Made')).catch(err => dispatch ({
+        type:GET_ERRORS,
+        payload: err.response.data
+    }));
+};
+
 export const setTrainLoading = () => {
     return {
         type: TRAIN_LOADING

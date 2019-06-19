@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import { getBookings } from '../../action/CartActions';
 import Spinner from '../spinner/Spinner';
 import PaymentSelection from '../payment/PaymentSelection';
+import { Link } from 'react-router-dom';
 
 import '../landing/style.css';
 
@@ -61,7 +62,7 @@ class Cart extends Component {
                                 <label className="card-label-right">40/=</label>
                             </div>
                             <div>
-                                <button className="btn primary" onClick={()=> this.redirectToPaymentSelection()}>Pay Now</button>
+                                <Link to="/payment"><button className="btn primary">Pay Now</button></Link>
                             </div>
                         </div>
                     </div>
